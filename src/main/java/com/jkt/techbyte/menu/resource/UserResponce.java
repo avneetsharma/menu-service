@@ -1,7 +1,11 @@
 package com.jkt.techbyte.menu.resource;
 
-import java.util.List;
+import lombok.Getter;
+import lombok.Setter;
 
+import java.util.List;
+@Getter
+@Setter
 public class UserResponce {
 	private List<UserMenuModel> userMenu;
 	
@@ -9,11 +13,4 @@ public class UserResponce {
 		this.userMenu=userMenuList;
 	}
 
-	public List<UserMenuModel> getUserMenu() {
-		return userMenu;
-	}
-
-	public void setUserMenu(List<UserMenuModel> userMenu) {
-		this.userMenu = userMenu;
-	}
 }

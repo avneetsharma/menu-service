@@ -29,22 +29,24 @@ repositories {
 
 ext {
 	set('springCloudVersion', "Hoxton.SR4")
+	set('sfmSpringJdbcVersion', "8.2.2")
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-	implementation 'org.liquibase:liquibase-core'
 	implementation 'org.postgresql:postgresql'
+	//implementation 'org.liquibase:liquibase-core'
 	//implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	//implementation 'org.springframework.cloud:spring-cloud-starter-config'
 	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
 	liquibaseRuntime 'org.liquibase:liquibase-core:3.8.1'
 	liquibaseRuntime 'ch.qos.logback:logback-classic:1.2.3'
 	liquibaseRuntime 'jakarta.xml.bind:jakarta.xml.bind-api:2.3.2'
 	liquibaseRuntime 'org.postgresql:postgresql'
+	implementation "org.simpleflatmapper:sfm-springjdbc:${sfmSpringJdbcVersion}"
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

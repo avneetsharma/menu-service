@@ -11,21 +11,21 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/v1/menu")
 public class MenuResource {
-	@Autowired
-	private IMenuService imenuService;
+    @Autowired
+    private IMenuService imenuService;
 
-	@GetMapping
-	public ResponseEntity<UserResponce> getAllUserMenu() throws Exception {
-		UserResponce userMenu = imenuService.getAllMenus(0);
-		return ResponseEntity.status(HttpStatus.CREATED).body(userMenu);
+    @GetMapping
+    public ResponseEntity<UserResponce> getAllUserMenu() throws Exception {
+        UserResponce userMenu = imenuService.findByUserRoleId(0);
+        return ResponseEntity.status(HttpStatus.CREATED).body(userMenu);
 
-	}
+    }
 
-	@GetMapping("/{userRoleId}")
-	public ResponseEntity<UserResponce> getUserAssignedMenu(@PathVariable int userRoleId) throws Exception {
-		UserResponce userMenu = imenuService.getAllMenus(userRoleId);
-		return ResponseEntity.status(HttpStatus.CREATED).body(userMenu);
+    @GetMapping("/{userRoleId}")
+    public ResponseEntity<UserResponce> getUserAssignedMenu(@PathVariable long userRoleId) throws Exception {
+        UserResponce userMenu = imenuService.findByUserRoleId(userRoleId);
+        return ResponseEntity.status(HttpStatus.CREATED).body(userMenu);
 
-	}
+    }
 
 }
