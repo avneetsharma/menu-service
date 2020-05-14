@@ -14,7 +14,7 @@ public class MenuService implements IMenuService {
 	@Override
 	public UserResponce findByUserRoleId(long userRoleId) throws Exception {
 		List<RepositoryMenuModel> listMenuModel = imenuRepository.findByUserRoleId(userRoleId);
-		return MenuUtils.prepareUserMenus(listMenuModel);
+		return MenuUtils.prepareUserMenu(listMenuModel);
 	}
 
 }

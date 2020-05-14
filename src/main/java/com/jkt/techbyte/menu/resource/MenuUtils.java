@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 
 public class MenuUtils {
 
-    public static UserResponce prepareUserMenus(List<RepositoryMenuModel> menuModelDaoList) {
+    public static UserResponce prepareUserMenu(List<RepositoryMenuModel> menuModelDaoList) {
 
         List<UserMenuModel> parentUserMenusList = menuModelDaoList.stream()
                 .filter(obj -> obj.getMenuParentId()==0)
@@ -22,9 +22,9 @@ public class MenuUtils {
         if (!menuModelDaoList.isEmpty()) {
             for (UserMenuModel userMenuModel : parentUserMenusList) {
                 subMenu = new ArrayList<UserMenuModel>();
-                for (RepositoryMenuModel menuModelDao : menuModelDaoList) {
-                    if (userMenuModel.getMenuId() == menuModelDao.getMenuParentId()) {
-                        UserMenuModel userMenuModelObj = new UserMenuModel(menuModelDao);
+                for (RepositoryMenuModel repositoryMenuModel : menuModelDaoList) {
+                    if (userMenuModel.getMenuId() == repositoryMenuModel.getMenuParentId()) {
+                        UserMenuModel userMenuModelObj = new UserMenuModel(repositoryMenuModel);
                         subMenu.add(userMenuModelObj);
                     }
                 }
