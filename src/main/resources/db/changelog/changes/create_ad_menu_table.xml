@@ -14,8 +14,8 @@
             <column name="name" type="VARCHAR(100)">
                 <constraints nullable="false"/>
             </column>
-            <column name="parent_id" type="bigint" defaultValue="0">
-                <constraints nullable="false"/>
+            <column name="parent_id" type="bigint" >
+
             </column>
         </createTable>
         <rollback>

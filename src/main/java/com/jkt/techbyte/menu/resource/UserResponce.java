@@ -7,10 +7,12 @@ import java.util.List;
 @Getter
 @Setter
 public class UserResponce {
-	private List<UserMenuModel> userMenu;
+	private String menuName;
+	private List<UserMenuModel> subMenus;
 	
 	public UserResponce(List<UserMenuModel> userMenuList) {
-		this.userMenu=userMenuList;
+		//this.menuName=name;
+		this.subMenus=userMenuList;
 	}
 
 }

@@ -1,9 +1,9 @@
 package com.jkt.techbyte.menu.resource;
 
+import org.springframework.jdbc.core.RowMapper;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import org.springframework.jdbc.core.RowMapper;
 
 public class MenuMapper implements RowMapper<RepositoryMenuModel>{
 	RepositoryMenuModel menuModel ;
